@@ -1,0 +1,41 @@
+
+managed implementation in class zbp_i_nrgp unique;
+strict ( 2 );
+
+define behavior for ZI_NRGP alias ZI_NRGP_DOC
+
+with unmanaged save
+lock master
+authorization master ( instance )
+{
+  update;
+  action ( features : instance ) ZPRINT parameter ZABS_RGP_NAMES result [1] $self;
+
+//     action ( features : instance ) ZPRINT result [1] $self;
+
+
+  field ( readonly ) Zgate;
+
+  mapping for zdb_nrgp
+  {
+    Zgate      = zgate;
+    Plant      = plant;
+    Gateindt   = gateindt;
+    Gateinout  = gateinout;
+    Gateoutdt  = gateoutdt;
+    Gateoutout = gateoutout;
+    Type       = type;
+    base64_3   = base64_3;
+    m_ind      = m_ind;
+    Gatetype   = gatetype;
+  }
+
+  // Attachment mapping to zita_nrgp
+  mapping for zita_nrgp
+  {
+    Zgate       = zgate;
+    MimeType    = mimetype;
+    FileName    = filename;
+    Attachments = attachment;
+  }
+}

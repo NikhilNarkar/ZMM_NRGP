@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination'
+define service ZSD_NRGP {
+  expose ZC_NRGP;
+}

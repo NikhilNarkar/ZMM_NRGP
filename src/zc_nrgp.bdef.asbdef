@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_NRGP alias ZI_NRGP_DOC
+{
+  use update;
+
+  use action ZPRINT;
+}
